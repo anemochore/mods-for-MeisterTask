@@ -24,7 +24,7 @@ div.mt-attachment-image-wrapper {
 }
 
 
-/* 오늘 날짜 카드 애니메이션 */
+/* 오늘 날짜 카드에 애니메이션 추가 */
 .blink {
   animation: blink 5s infinite;
 }
