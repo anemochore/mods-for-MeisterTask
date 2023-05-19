@@ -52,5 +52,5 @@ div.mt-attachment-image-wrapper {
 
 /* 마감일이 먼 카드 흐리게 */
 .far_future {
-  opacity: 0.5;
+  opacity: 0.3;
 }
