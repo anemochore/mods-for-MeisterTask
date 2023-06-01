@@ -1,7 +1,7 @@
-/* 카드 및 로그 텍스트 줄이기 */
+/* 카드 및 로그 텍스트(그리고 로그 텍스트 내 긴 url) 줄이기 */
 div[data-item-id] div.kr-view:not([style])>div.kr-text, 
 div.kr-view+div.kr-view+div.kr-view>div.kr-text, 
-div.ml-react-markdown {
+div.kr-view>div.ml-react-markdown, div.kr-view>div.ml-react-markdown a {
   text-overflow: ellipsis;
   overflow: hidden;
   display: -webkit-box;
@@ -9,7 +9,8 @@ div.ml-react-markdown {
 }
 
 div[data-item-id] div.kr-view:not([style])>div.kr-text, 
-div.kr-view+div.kr-view+div.kr-view>div.kr-text {
+div.kr-view+div.kr-view+div.kr-view>div.kr-text,
+div.kr-view>div.ml-react-markdown a {
   -webkit-line-clamp: 3;
 }
 
