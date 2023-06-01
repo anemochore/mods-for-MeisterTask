@@ -13,7 +13,7 @@ div.kr-view+div.kr-view+div.kr-view>div.kr-text {
   -webkit-line-clamp: 3;
 }
 
-div.ml-react-markdown {
+div.kr-view>div.ml-react-markdown {
   -webkit-line-clamp: 6;
 }
 
