@@ -18,11 +18,10 @@ div.selection-dark div.kr-view+div.kr-view+div.kr-view>div.kr-text,  /* 3) 로�
   -webkit-line-clamp: 3;
 }
 
-/* 로그 댓글 텍스트는 6줄로 제한. 서체 크기도 줄임 */
+/* 로그 댓글 텍스트는 6줄로 제한 */
 div.selection-dark div.kr-view>div.ml-react-markdown                 /* 2) 로그 내 댓글 텍스트 */
 {
   -webkit-line-clamp: 6;
-  font-size: 90% !important;
 }
 
 /* 로그 내 URL은 1줄로 제한 */
@@ -36,8 +35,8 @@ div.selection-dark div.kr-view:has(div.ml-react-markdown)+div.kr-view[style] {
   width: initial !important;
 }
 
-/* 로그 내 활동 텍스트도 서체 크기 줄임 */
-div.selection-dark div.kr-view+div.kr-view>div.kr-view>div.kr-view>div.kr-view+div.kr-text {
+/* 로그 내 모든 텍스트 서체 크기 줄임 */
+div.selection-dark div.kr-text {
   font-size: 90% !important;
 }
 
