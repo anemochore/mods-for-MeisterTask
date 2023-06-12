@@ -36,11 +36,6 @@ div.selection-dark div.kr-view:has(div.ml-react-markdown)+div.kr-view[style] {
   width: initial !important;
 }
 
-/* 로그 내 활동 텍스트도 서체 크기 줄임 */
-div.selection-dark div.kr-view+div.kr-view>div.kr-view>div.kr-view>div.kr-view div.kr-text {
-  font-size: 90% !important;
-}
-
 /* 카드(로그 포함) 이미지 세로 제한(160px) */
 div.mt-attachment-image-wrapper {
   height: 160px;
