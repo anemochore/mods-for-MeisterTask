@@ -1,31 +1,53 @@
 /* 카드 및 로그 텍스트(그리고 로그 텍스트 내 긴 url) 줄이기 */
-div[data-item-id] div.kr-view:not([style])>div.kr-text, 
-div.kr-view+div.kr-view+div.kr-view>div.kr-text, 
-div.kr-view>div.ml-react-markdown, div.kr-view>div.ml-react-markdown a {
+div[data-item-id] div.kr-view:not([style])>div.kr-text,              /* 1) 카드 제목 */
+div.selection-dark div.kr-view>div.ml-react-markdown,                /* 2) 로그 내 댓글 텍스트 */
+div.selection-dark div.kr-view+div.kr-view+div.kr-view>div.kr-text,  /* 3) 로그 내 카드 제목 */
+div.selection-dark div.kr-view>div.ml-react-markdown a               /* 4) 로그 내 URL */
+{
   text-overflow: ellipsis;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-}
-
-div[data-item-id] div.kr-view:not([style])>div.kr-text, 
-div.kr-view+div.kr-view+div.kr-view>div.kr-text,
-div.kr-view>div.ml-react-markdown a {
   -webkit-line-clamp: 3;
 }
 
-div.kr-view>div.ml-react-markdown {
-  -webkit-line-clamp: 6;
+/* 카드 및 로그 텍스트 3줄로 제한 */
+div[data-item-id] div.kr-view:not([style])>div.kr-text,              /* 1) 카드 제목 */
+div.selection-dark div.kr-view+div.kr-view+div.kr-view>div.kr-text,  /* 3) 로그 내 카드 제목 */
+{
+  -webkit-line-clamp: 3;
 }
 
+/* 로그 댓글 텍스트는 6줄로 제한. 서체 크기도 줄임 */
+div.selection-dark div.kr-view>div.ml-react-markdown                 /* 2) 로그 내 댓글 텍스트 */
+{
+  -webkit-line-clamp: 6;
+  font-size: 90% !important;
+}
 
-/* 카드 이미지 세로 제한(220px -> 160px) */
+/* 로그 내 URL은 1줄로 제한 */
+div.selection-dark div.kr-view>div.ml-react-markdown a               /* 4) 로그 내 URL */
+{
+  -webkit-line-clamp: 1;
+}
+
+/* 로그 내 우측 여백 미사용 시 삭제 */
+div.selection-dark div.kr-view:has(div.ml-react-markdown)+div.kr-view[style] {
+  width: initial !important;
+}
+
+/* 로그 내 활동 텍스트도 서체 크기 줄임 */
+div.selection-dark div.kr-view+div.kr-view>div.kr-view>div.kr-view>div.kr-view+div.kr-text {
+  font-size: 90% !important;
+}
+
+/* 카드(로그 포함) 이미지 세로 제한(160px) */
 div.mt-attachment-image-wrapper {
   height: 160px;
 }
 
 
-/* 오늘 날짜 카드에 애니메이션 추가 */
+/* 오늘 날짜 카드에 애니메이션 추가. 이 두 개는 제대로 작동하지 않음 */
 .blink {
   animation: blink 5s infinite;
 }
