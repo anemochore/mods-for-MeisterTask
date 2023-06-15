@@ -36,8 +36,8 @@ div.selection-dark div.kr-view:has(div.ml-react-markdown)+div.kr-view[style] {
   width: initial !important;
 }
 
-/* 카드(로그 포함) 이미지 세로 제한(160px) */
-div.mt-attachment-image-wrapper {
+/* 카드와 로그의 이미지만 세로 제한(160px) */
+div.knightrider-lazyscrollview-item div.mt-attachment-image-wrapper, div.selection-dark div.mt-attachment-image-wrapper {
   height: 160px;
 }
 
