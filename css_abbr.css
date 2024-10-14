@@ -1,28 +1,31 @@
+body, .kr-view, .kr-text {
+  font-family: "Noto Sans CJK KR", 나눔고딕 !important;
+}
+
 /* 카드 및 로그 텍스트(그리고 로그 텍스트 내 긴 url) 줄이기 */
 div[data-item-id] div.kr-view:not([style])>div.kr-text,              /* 1) 카드 제목 */
 div.selection-dark div.kr-view>div.ml-react-markdown,                /* 2) 로그 내 댓글 텍스트 */
-div.selection-dark div.kr-view+div.kr-view+div.kr-view>div.kr-text,  /* 3) 로그 내 카드 제목 */
+div.kr-view[style="margin-top: 5px;"]>div.kr-text,                   /* 3) 로그 내 카드 제목 */
 div.selection-dark div.kr-view>div.ml-react-markdown a               /* 4) 로그 내 URL */
 {
   text-overflow: ellipsis;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 6;
 }
 
 /* 카드 및 로그 텍스트 3줄로 제한 */
-div[data-item-id] div.kr-view:not([style])>div.kr-text,              /* 1) 카드 제목 */
-div.selection-dark div.kr-view+div.kr-view+div.kr-view>div.kr-text,  /* 3) 로그 내 카드 제목 */
+.kr-view[style="margin-top: 5px;"]>div.kr-text                      /* 3) 로그 내 카드 제목 */
 {
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 3 !important;
 }
 
-/* 로그 댓글 텍스트는 6줄로 제한. 서체 크기도 줄임 */
+/* 로그 댓글 텍스트는 높이 자체를 제한. 서체 크기도 줄임 */
 div.selection-dark div.kr-view>div.ml-react-markdown                 /* 2) 로그 내 댓글 텍스트 */
 {
-  -webkit-line-clamp: 6;
   font-size: 90% !important;
+  max-height: 320px;
 }
 
 /* 로그 내 URL은 1줄로 제한 */
@@ -39,36 +42,4 @@ div.selection-dark div.kr-view:has(div.ml-react-markdown)+div.kr-view[style] {
 /* 카드와 로그의 이미지만 세로 제한(160px) */
 div.knightrider-lazyscrollview-item div.mt-attachment-image-wrapper, div.selection-dark div.mt-attachment-image-wrapper {
   height: 160px;
-}
-
-
-/* 오늘 날짜 카드에 애니메이션 추가. 이 두 개는 제대로 작동하지 않음 */
-.blink {
-  animation: blink 5s infinite;
-}
-@keyframes blink {
-  0% {
-    background: #fff9ae;
-  }
-  20% {
-    background: #f8ed62;
-  }
-  40% {
-    background: #e9d700;
-  }
-  60% {
-    background: #dab600;
-  }
-  80% {
-    background: #a98600;
-  }
-  100% {
-    background: unset;
-  }
-}
-
-
-/* 마감일이 먼 카드 흐리게 */
-.far_future {
-  opacity: 0.3;
 }
