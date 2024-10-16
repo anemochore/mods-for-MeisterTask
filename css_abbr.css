@@ -1,5 +1,5 @@
 body, .kr-view, .kr-text {
-  font-family: "Noto Sans CJK KR", 나눔고딕 !important;
+  font-family: 나눔고딕, "Noto Sans CJK KR" !important;
 }
 
 /* 카드 및 로그 텍스트(그리고 로그 텍스트 내 긴 url) 줄이기 */
