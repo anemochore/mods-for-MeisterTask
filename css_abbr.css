@@ -3,40 +3,33 @@ body, .kr-view, .kr-text {
 }
 
 /* 카드 및 로그 텍스트(그리고 로그 텍스트 내 긴 url) 줄이기 */
-div[data-item-id] div.kr-view:not([style])>div.kr-text,              /* 1) 카드 제목 */
-div.selection-dark div.kr-view>div.ml-react-markdown,                /* 2) 로그 내 댓글 텍스트 */
-div.kr-view[style="margin-top: 5px;"]>div.kr-text,                   /* 3) 로그 내 카드 제목 */
-div.selection-dark div.kr-view>div.ml-react-markdown a               /* 4) 로그 내 URL */
+div[data-item-id] div.kr-view:not([style])>div.kr-text,               /* (1) 카드 제목 */
+div.selection-dark div.kr-view>div.ml-react-markdown,                 /* (2) 로그 내 댓글 텍스트 */
+div.selection-dark div.kr-view[style="margin-top: 5px;"]>div.kr-text  /* (3) 로그 내 카드 제목 */
 {
   text-overflow: ellipsis;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 6;
+  -webkit-line-clamp: 5;
 }
 
-/* 카드 및 로그 텍스트 3줄로 제한 */
-.kr-view[style="margin-top: 5px;"]>div.kr-text                      /* 3) 로그 내 카드 제목 */
-{
-  -webkit-line-clamp: 3 !important;
-}
+div.selection-dark {
+  /* (2) 로그 댓글 텍스트는 높이 자체를 제한. 서체 크기도 줄임 */
+  div.kr-view>div.ml-react-markdown {
+    font-size: 90% !important;
+    max-height: 320px;
+  }
 
-/* 로그 댓글 텍스트는 높이 자체를 제한. 서체 크기도 줄임 */
-div.selection-dark div.kr-view>div.ml-react-markdown                 /* 2) 로그 내 댓글 텍스트 */
-{
-  font-size: 90% !important;
-  max-height: 320px;
-}
+  /* (3) 로그 내 카드 제목은 3줄로 제한 */
+  div.kr-view[style="margin-top: 5px;"]>div.kr-text {
+    -webkit-line-clamp: 3;
+  }
 
-/* 로그 내 URL은 1줄로 제한 */
-div.selection-dark div.kr-view>div.ml-react-markdown a               /* 4) 로그 내 URL */
-{
-  -webkit-line-clamp: 1;
-}
-
-/* 로그 내 우측 여백 미사용 시 삭제 */
-div.selection-dark div.kr-view:has(div.ml-react-markdown)+div.kr-view[style] {
-  width: initial !important;
+  /* 로그 내 우측 여백 미사용 시 삭제 */
+  div.kr-view+div.kr-view[style="width: 44px; height: 100%;"] {
+    width: initial !important;
+  }
 }
 
 /* 카드와 로그의 이미지만 세로 제한(160px) */
