@@ -26,6 +26,11 @@ div.selection-dark {
     -webkit-line-clamp: 3;
   }
 
+  /* 로그 내 좌측 여백 줄임 */
+  div.kr-view[style="flex-grow: 1; flex-shrink: 1;"]>div') {
+    padding-left: 8px !important;
+  }
+
   /* 로그 내 우측 여백 미사용 시 삭제 */
   div.kr-view+div.kr-view[style="width: 44px; height: 100%;"] {
     width: initial !important;
