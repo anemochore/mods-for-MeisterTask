@@ -27,7 +27,7 @@ div.selection-dark {
   }
 
   /* 로그 내 좌측 여백 줄임 */
-  div.kr-view[style="flex-grow: 1; flex-shrink: 1;"]>div') {
+  div.kr-view[style="flex-grow: 1; flex-shrink: 1;"]>div {
     padding-left: 8px !important;
   }
 
